@@ -1,10 +1,12 @@
 import './App.css'
+import CurrencyConverter from './components/CurrencyConverter'
 
 function App() {
 
   return (
     <>
-      <p>hola</p>
+      <h1>Currency converter</h1>
+      <CurrencyConverter />
     </>
   )
 }
