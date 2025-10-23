@@ -1,14 +1,21 @@
-function ResultDisplay({ amount, fromCurrency, toCurrency }) {
+function ResultDisplay({
+  amount,
+  fromCurrency,
+  toCurrency,
+  convertedValue,
+  loading,
+  error,
+}) {
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
+  if (!convertedValue) return <p>Enter an amount to convert.</p>;
+
   return (
-    <div style={{ marginTop: "1rem" }}>
+    <div>
       <h4>Result</h4>
-      {amount > 0 ? (
-        <p>
-          {amount} {fromCurrency} = ... {toCurrency}
-        </p>
-      ) : (
-        <p>Enter an amount to convert.</p>
-      )}
+      <p>
+        {amount} {fromCurrency} = {convertedValue.toFixed(2)} {toCurrency}
+      </p>
     </div>
   );
 }
