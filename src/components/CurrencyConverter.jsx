@@ -35,8 +35,14 @@ function CurrencyConverter() {
   }, [amount, fromCurrency, toCurrency]);
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h2>Currency Converter</h2>
+    <div className="max-w-md mx-auto mt-10 rounded-2xl bg-slate-900/90 border border-slate-700 shadow-xl p-6 text-slate-100 backdrop-blur">
+      <h2 className="text-2xl font-semibold mb-1 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+        Currency Converter
+      </h2>
+      <p className="text-sm text-slate-400 mb-6 text-center">
+        Convierte entre USD, CLP y EUR en tiempo real.
+      </p>
+
       <ConverterForm
         amount={amount}
         fromCurrency={fromCurrency}
@@ -45,6 +51,7 @@ function CurrencyConverter() {
         onFromChange={setFromCurrency}
         onToChange={setToCurrency}
       />
+
       <ResultDisplay
         amount={amount}
         fromCurrency={fromCurrency}
